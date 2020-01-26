@@ -6,7 +6,8 @@ import { NavbarComponent } from './Navbar/navbar.component';
 import { SliderComponent } from './Slider/slider.component';
 import { AboutComponent} from './About/about.component';
 import { CounterComponent} from './Counter/counter.component';
-
+import { MenuComponent} from './Menu/menu.component';
+import { ReservationComponent} from './Reservation/reservation.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { CounterComponent} from './Counter/counter.component';
     NavbarComponent,
     SliderComponent,
     AboutComponent,
-    CounterComponent
+    CounterComponent,
+    MenuComponent,
+    ReservationComponent
     ],
   imports: [
     BrowserModule
