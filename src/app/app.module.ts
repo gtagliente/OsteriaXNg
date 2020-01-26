@@ -11,6 +11,7 @@ import { ReservationComponent} from './Reservation/reservation.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ChefComponent } from './chef/chef.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ChefComponent } from './chef/chef.component';
     ReservationComponent,
     GalleryComponent,
     TestimonialsComponent,
-    ChefComponent
+    ChefComponent,
+    ContactComponent
     ],
   imports: [
     BrowserModule
