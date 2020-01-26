@@ -12,6 +12,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ChefComponent } from './chef/chef.component';
 import { ContactComponent } from './contact/contact.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ContactComponent } from './contact/contact.component';
     GalleryComponent,
     TestimonialsComponent,
     ChefComponent,
-    ContactComponent
+    ContactComponent,
+    MapComponent
     ],
   imports: [
     BrowserModule
