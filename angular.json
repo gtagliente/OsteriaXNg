@@ -24,9 +24,25 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/assets/css/font-awesome.css",
+              "node_modules/assets/css/bootstrap.css",
+              "node_modules/assets/css/slick.css",
+              "node_modules/assets/css/bootstrap-datepicker.css",
+              "node_modules/assets/css/magnific-popup.css",
+              "node_modules/assets/css/jquery.fancybox.css",
+              "node_modules/assets/css/theme-color/default-theme.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/assets/js/jquery.min.js",
+              "node_modules/assets/js/bootstrap.js",
+              "node_modules/assets/js/slick.js",
+              "node_modules/assets/js/simple-animated-counter.js",
+              "node_modules/assets/js/jquery.magnific-popup.min.js",
+              "node_modules/assets/js/bootstrap-datepicker.js",
+              "node_modules/assets/js/app.js",
+              "node_modules/assets/js/custom.js"
+            ]
           },
           "configurations": {
             "production": {
