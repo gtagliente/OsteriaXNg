@@ -8,6 +8,7 @@ import { AboutComponent} from './About/about.component';
 import { CounterComponent} from './Counter/counter.component';
 import { MenuComponent} from './Menu/menu.component';
 import { ReservationComponent} from './Reservation/reservation.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ReservationComponent} from './Reservation/reservation.component';
     AboutComponent,
     CounterComponent,
     MenuComponent,
-    ReservationComponent
+    ReservationComponent,
+    GalleryComponent
     ],
   imports: [
     BrowserModule
