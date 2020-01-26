@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './Navbar/navbar.component';
 import { SliderComponent } from './Slider/slider.component';
 import { AboutComponent} from './About/about.component';
+import { CounterComponent} from './Counter/counter.component';
 
 
 @NgModule({
@@ -12,8 +13,9 @@ import { AboutComponent} from './About/about.component';
     AppComponent,
     NavbarComponent,
     SliderComponent,
-    AboutComponent
-  ],
+    AboutComponent,
+    CounterComponent
+    ],
   imports: [
     BrowserModule
   ],
