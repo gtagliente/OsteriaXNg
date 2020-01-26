@@ -10,6 +10,7 @@ import { MenuComponent} from './Menu/menu.component';
 import { ReservationComponent} from './Reservation/reservation.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
+import { ChefComponent } from './chef/chef.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     MenuComponent,
     ReservationComponent,
     GalleryComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    ChefComponent
     ],
   imports: [
     BrowserModule
