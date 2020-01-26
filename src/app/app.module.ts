@@ -13,6 +13,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ChefComponent } from './chef/chef.component';
 import { ContactComponent } from './contact/contact.component';
 import { MapComponent } from './map/map.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MapComponent } from './map/map.component';
     TestimonialsComponent,
     ChefComponent,
     ContactComponent,
-    MapComponent
+    MapComponent,
+    FooterComponent
     ],
   imports: [
     BrowserModule
