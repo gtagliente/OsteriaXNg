@@ -9,6 +9,7 @@ import { CounterComponent} from './Counter/counter.component';
 import { MenuComponent} from './Menu/menu.component';
 import { ReservationComponent} from './Reservation/reservation.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { GalleryComponent } from './gallery/gallery.component';
     CounterComponent,
     MenuComponent,
     ReservationComponent,
-    GalleryComponent
+    GalleryComponent,
+    TestimonialsComponent
     ],
   imports: [
     BrowserModule
