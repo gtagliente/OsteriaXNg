@@ -30,7 +30,8 @@
               "node_modules/assets/css/bootstrap-datepicker.css",
               "node_modules/assets/css/magnific-popup.css",
               "node_modules/assets/css/jquery.fancybox.css",
-              "node_modules/assets/css/theme-color/default-theme.css"
+              "node_modules/assets/css/theme-color/default-theme.css",
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/assets/js/jquery.min.js",

@@ -14,6 +14,7 @@ import { ChefComponent } from './chef/chef.component';
 import { ContactComponent } from './contact/contact.component';
 import { MapComponent } from './map/map.component';
 import { FooterComponent } from './footer/footer.component';
+import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     ChefComponent,
     ContactComponent,
     MapComponent,
-    FooterComponent
+    FooterComponent,
+    MenuItemComponent
     ],
   imports: [
     BrowserModule
