@@ -1,0 +1,210 @@
+
+#mu-contact {
+  background-color: #f8f8f8;
+  display: inline;
+  float: left;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.mu-contact-area {
+  display: inline;
+  float: left;
+  width: 100%;
+}
+
+.mu-contact-content {
+  display: inline;
+  float: left;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.mu-contact-left {
+  display: inline;
+  float: left;
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+}
+
+.mu-contact-left .form-group {
+  margin-bottom: 25px;
+}
+
+.mu-contact-left .form-group label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.mu-contact-form input[type="text"],
+.mu-contact-form input[type="email"] {
+  color: #000;
+  border-radius: 0;
+  height: 40px;
+}
+
+.mu-contact-form input[type="text"]:focus,
+.mu-contact-form input[type="email"]:focus {
+  box-shadow: none;
+}
+
+.mu-contact-form textarea {
+  color: #000;
+  border-radius: 0;
+  padding: 10px;
+}
+
+.mu-contact-form textarea:focus {
+  box-shadow: none;
+}
+
+.mu-contact-right {
+  display: inline;
+  float: left;
+  padding: 0 30px;
+  width: 100%;
+}
+
+.mu-contact-right .mu-contact-widget {
+  display: inline;
+  float: left;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.mu-contact-right .mu-contact-widget h3 {
+  margin-top: 0px;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.mu-contact-right .mu-contact-widget > p {
+  letter-spacing: 0.5px;
+  line-height: 26px;
+}
+
+.mu-contact-right .mu-contact-widget address {
+  margin-top: 20px;
+}
+
+.mu-contact-right .mu-contact-widget address p {
+  letter-spacing: 0.5px;
+}
+
+.mu-contact-right .mu-contact-widget address p i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.mu-contact-right .mu-contact-widget address p span {
+  display: inline-block;
+  margin-right: 20px;
+  min-width: 130px;
+}
+
+#form-messages {
+  margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.success {
+  padding: 1em;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: #468847;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+  -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+        border-radius: 4px;
+}
+
+.error {
+  padding: 1em;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: #b94a48;
+  background-color: #f2dede;
+  border: 1px solid rgba(185, 74, 72, 0.3);
+  -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+        border-radius: 4px;
+}
+
+
+
+@media (max-width: 991px) {
+
+  #mu-contact .mu-contact-area .mu-contact-content .mu-contact-right {
+    margin-top: 50px;
+    padding: 0;
+  }
+
+}
+
+
+
+
+
+@media (max-width: 360px) {
+
+  #mu-slider .mu-slider-area .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .mu-top-slider .mu-top-slider-single .mu-top-slider-content .mu-slider-small-title {
+    font-size: 30px;
+    line-height: 25px;
+  }
+
+  #mu-restaurant-menu .mu-restaurant-menu-area .mu-restaurant-menu-content .mu-restaurant-menu li {
+    margin-bottom: 12px;
+  }
+
+  #mu-about-us {
+    padding: 100px 0 50px;
+  }
+
+  #mu-restaurant-menu {
+    padding-bottom: 0px;
+  }
+
+  #mu-reservation .mu-reservation-area .mu-reservation-content {
+    padding: 0;
+  }
+
+  .mu-opening-hour h2 {
+    font-size: 42px;
+    padding-bottom: 10px;
+  }
+
+  .mu-title h2 {
+    font-size: 28px;
+  }
+
+  #mu-client-testimonial .mu-client-testimonial-area .mu-testimonial-content .mu-testimonial-slider li .mu-testimonial-single .mu-testimonial-info p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  #mu-contact .mu-contact-area .mu-contact-content .mu-contact-right {
+    text-align: center;
+  }
+
+  #mu-contact .mu-contact-area .mu-contact-content .mu-contact-right .mu-contact-widget address {
+    text-align: left;
+  }
+
+  #mu-contact {
+    padding: 100px 0 50px;
+  }
+
+  .mu-contact-form .mu-send-btn {
+    width: 100%;
+  }
+
+}
+

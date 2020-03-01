@@ -1,0 +1,78 @@
+
+/*==================
+	ABOUT US SECTION
+====================*/
+
+#mu-about-us {
+  display: inline;
+  float: left;
+  width: 100%;
+  padding: 100px 0;
+}
+
+.mu-about-us-area {
+  display: inline;
+  float: left;
+  width: 100%;
+}
+
+.mu-about-us-right {
+  display: inline;
+  float: left;
+  margin-top: 20px;
+  padding-top: 30px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.mu-about-us-right ul {
+  margin-bottom: 20px;
+  padding-left: 25px;
+}
+
+.mu-about-us-right ul li {
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+.mu-about-us-right ul li:before {
+  content: "\f0da";
+  font-family: fontAwesome;
+  margin-right: 10px;
+}
+
+.mu-about-us-left {
+  display: inline;
+  float: left;
+  margin-top: 20px;
+  padding-top: 30px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.mu-title {
+  display: inline;
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mu-title .mu-subtitle {
+  font-size: 50px;
+  font-family: "Tangerine", cursive;
+  line-height: 30px;
+}
+
+.mu-title h2 {
+  color: #000;
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+
+
+@media (max-width: 360px) {
+  #mu-about-us {
+    padding: 100px 0 50px;
+  }
+}

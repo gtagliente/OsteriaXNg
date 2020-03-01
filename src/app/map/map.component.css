@@ -1,0 +1,26 @@
+
+#mu-map {
+  display: inline;
+  float: left;
+  height: 450px;
+  width: 100%;
+}
+
+#mu-map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width: 480px) {
+  #mu-map {
+    height: 350px;
+  }
+}
+
+@media (max-width: 360px) {
+  #mu-map {
+    height: 250px;
+  }
+}
+
