@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MapComponent } from './map/map.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
+import { MenuPanelComponent } from './menu/menu-panel/menu-panel.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MenuItemComponent } from './menu/menu-item/menu-item.component';
     ContactComponent,
     MapComponent,
     FooterComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    MenuPanelComponent
     ],
   imports: [
     BrowserModule

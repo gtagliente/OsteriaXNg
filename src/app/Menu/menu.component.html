@@ -11,134 +11,17 @@
 
           <div class="mu-restaurant-menu-content">
             <ul class="nav nav-tabs mu-restaurant-menu">
-              <li class="active"><a href="#breakfast" data-toggle="tab">Breakfast</a></li>
-              <li><a href="#meals" data-toggle="tab">Meals</a></li>
-              <li><a href="#snacks" data-toggle="tab">Snacks</a></li>
-              <li><a href="#desserts" data-toggle="tab">Desserts</a></li>
-              <li><a href="#drinks" data-toggle="tab">Drinks</a></li>
+              <!-- <li class="active"><a  (click)="selectType( 'Breakfast' )">Breakfast</a></li> -->
+              <li><a  (click)="selectType( 'Breakfast' )">Breakfast</a></li>
+              <li><a  (click)="selectType( 'Meals')">Meals</a></li>
+              <li><a (click)="selectType('Snacks') ">Snacks</a></li>
+              <li><a (click)="selectType('Desserts')">Desserts</a></li>
+              <li><a (click)="selectType( 'Drinks') ">Drinks</a></li>
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
-              <div class="tab-pane fade in active" id="breakfast">
-                <div class="mu-tab-content-area">
-                  <div class="row">
-
-                    <div class="col-md-6">
-                      <div class="mu-tab-content-left">
-                        <ul class="mu-menu-item-nav">
-                            <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                      </div>
-                    </div>
-
-                   <div class="col-md-6">
-                     <div class="mu-tab-content-right">
-                        <ul class="mu-menu-item-nav">
-                          <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                     </div>
-                   </div>
-
-                 </div>
-               </div>
-              </div>
-
-              <div class="tab-pane fade" id="meals">
-                <div class="mu-tab-content-area">
-                  <div class="row">
-
-                    <div class="col-md-6">
-                      <div class="mu-tab-content-left">
-                        <ul class="mu-menu-item-nav">
-                          <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                      </div>
-                    </div>
-
-                   <div class="col-md-6">
-                     <div class="mu-tab-content-right">
-                        <ul class="mu-menu-item-nav">
-                          <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                     </div>
-                   </div>
-
-                 </div>
-               </div>
-              </div>
-
-              <div class="tab-pane fade" id="snacks">
-                <div class="mu-tab-content-area">
-                  <div class="row">
-
-                    <div class="col-md-6">
-                      <div class="mu-tab-content-left">
-                        <ul class="mu-menu-item-nav">
-                          <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                      </div>
-                    </div>
-
-                   <div class="col-md-6">
-                     <div class="mu-tab-content-right">
-                        <ul class="mu-menu-item-nav">
-                          <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                     </div>
-                   </div>
-
-                 </div>
-               </div>
-              </div>
-
-              <div class="tab-pane fade" id="desserts">
-                <div class="mu-tab-content-area">
-                  <div class="row">
-
-                    <div class="col-md-6">
-                      <div class="mu-tab-content-left">
-                        <ul class="mu-menu-item-nav">
-                          <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                      </div>
-                    </div>
-
-                   <div class="col-md-6">
-                     <div class="mu-tab-content-right">
-                        <ul class="mu-menu-item-nav">
-                          <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                     </div>
-                   </div>
-
-                 </div>
-               </div>
-              </div>
-
-              <div class="tab-pane fade" id="drinks">
-                <div class="mu-tab-content-area">
-                  <div class="row">
-
-                    <div class="col-md-6">
-                      <div class="mu-tab-content-left">
-                        <ul class="mu-menu-item-nav">
-                          <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                      </div>
-                    </div>
-
-                   <div class="col-md-6">
-                     <div class="mu-tab-content-right">
-                        <ul class="mu-menu-item-nav">
-                          <app-menu-item [item] = "dish" *ngFor="let dish of dishList"></app-menu-item>
-                        </ul>
-                     </div>
-                   </div>
-
-                 </div>
-               </div>
-              </div>
+              <app-menu-panel [paneType]= "selectedPaneType"></app-menu-panel>
             </div>
           </div>
         </div>
