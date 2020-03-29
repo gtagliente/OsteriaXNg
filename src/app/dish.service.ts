@@ -12,6 +12,7 @@ export class DishService{
     new MenuItem ('Meals','English Meals Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
     new MenuItem ('Meals','Chinese Meals Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
     new MenuItem ('Meals','Indian Meals Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
+    new MenuItem ('Meals','Italian Meals Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
 
     new MenuItem ('Snacks','English Snacks Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
     new MenuItem ('Snacks','Chinese Snacks Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
