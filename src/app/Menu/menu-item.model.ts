@@ -7,7 +7,7 @@ export class MenuItem {
   public amount: string;
   public description: string;
   public imagePath: string;
-  private guid: string;
+  public guid: string;
 
   constructor(dishType: string, name: string, amount: string, description: string, imagePath: string) {
     this.dishType = dishType;

@@ -14,8 +14,8 @@ import { ChefComponent } from './chef/chef.component';
 import { ContactComponent } from './contact/contact.component';
 import { MapComponent } from './map/map.component';
 import { FooterComponent } from './footer/footer.component';
-import { MenuItemComponent } from './menu/menu-item/menu-item.component';
-import { MenuPanelComponent } from './menu/menu-panel/menu-panel.component';
+import { MenuItemComponent } from './Menu/menu-item/menu-item.component';
+import { MenuPanelComponent } from './Menu/menu-panel/menu-panel.component';
 
 @NgModule({
   declarations: [
