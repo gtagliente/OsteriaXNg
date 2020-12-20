@@ -12,17 +12,18 @@
           <div class="mu-restaurant-menu-content">
             <ul class="nav nav-tabs mu-restaurant-menu">
               <!-- <li class="active"><a  (click)="selectType( 'Breakfast' )">Breakfast</a></li> -->
-              <li  class="active"><a  (click)="selectType( 'Breakfast' )">Breakfast</a></li>
-              <li><a  (click)="selectType( 'Meals')">Meals</a></li>
-              <li><a (click)="selectType('Snacks') ">Snacks</a></li>
-              <li><a (click)="selectType('Desserts')">Desserts</a></li>
-              <li><a (click)="selectType( 'Drinks') ">Drinks</a></li>
+              <li  class="active"><a routerLinkActive='active' [routerLink] = "['/menu','Breakfast']">Breakfast</a></li>
+              <li><a  [routerLink] = "['/menu','Meals']">Meals</a></li>
+              <li><a [routerLink] = "['/menu','Snacks']">Snacks</a></li>
+              <li><a [routerLink] = "['/menu','Desserts']">Desserts</a></li>
+              <li><a [routerLink] = "['/menu','Drinks']">Drinks</a></li>
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
-              <app-menu-panel [paneType]= "selectedPaneType"></app-menu-panel>
+              <router-outlet></router-outlet>
             </div>
+
           </div>
         </div>
       </div>

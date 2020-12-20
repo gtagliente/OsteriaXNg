@@ -16,6 +16,17 @@ import { MapComponent } from './map/map.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuItemComponent } from './Menu/menu-item/menu-item.component';
 import { MenuPanelComponent } from './Menu/menu-panel/menu-panel.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes: Routes = [
+//   { path: 'menu', component: MenuComponent, children:[
+//     {path:':type', component: MenuPanelComponent }
+//   ]
+// },
+  {path: 'menu/:type', component: MenuPanelComponent},
+  { path: 'Slider', component: SliderComponent},
+  { path: 'map', component: MapComponent}
+];
 
 @NgModule({
   declarations: [
@@ -36,7 +47,8 @@ import { MenuPanelComponent } from './Menu/menu-panel/menu-panel.component';
     MenuPanelComponent
     ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
