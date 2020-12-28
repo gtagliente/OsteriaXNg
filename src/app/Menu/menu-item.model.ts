@@ -1,20 +1,25 @@
 declare var uuidv4: Function;
 
-export class MenuItem {
+import {MenuItemInterface} from  '../dish.service';
 
-  public dishType: string;
-  public name: string;
-  public amount: string;
-  public description: string;
+
+export class MenuItem implements MenuItemInterface{
+
+  public id: number;
+  public tipo: string;
+  public nome: string;
+  public prezzo: string;
+  public descrizione: string;
   public imagePath: string;
   public guid: string;
 
   constructor(dishType: string, name: string, amount: string, description: string, imagePath: string) {
-    this.dishType = dishType;
-    this.name = name;
-    this.amount = amount;
-    this.description = description;
+    this.tipo = dishType;
+    this.nome = name;
+    this.prezzo = amount;
+    this.descrizione = description;
     this.imagePath = imagePath;
     this.guid = uuidv4();
   }
+
 }

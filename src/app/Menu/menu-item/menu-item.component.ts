@@ -2,7 +2,6 @@ import { Component, OnInit, Input,ViewEncapsulation } from '@angular/core';
 
 import { MenuItem } from '../menu-item.model';
 
-declare var popupInitialize: Function;
 
 @Component({
   selector: 'app-menu-item',
@@ -17,6 +16,7 @@ export class MenuItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    popupInitialize();
+    // popupInitialize();
   }
+
 }

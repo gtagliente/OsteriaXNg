@@ -17,13 +17,19 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuItemComponent } from './Menu/menu-item/menu-item.component';
 import { MenuPanelComponent } from './Menu/menu-panel/menu-panel.component';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuEditItemComponent } from './Menu/menu-edit-item/menu-edit-item.component';
 
 const appRoutes: Routes = [
 //   { path: 'menu', component: MenuComponent, children:[
 //     {path:':type', component: MenuPanelComponent }
 //   ]
 // },
-  {path: 'menu/:type', component: MenuPanelComponent},
+  //{path: 'menu/:type', component: MenuPanelComponent},
+
+  { path: '', component: MenuPanelComponent},
+  { path: ':type', component: MenuPanelComponent},
   { path: 'Slider', component: SliderComponent},
   { path: 'map', component: MapComponent}
 ];
@@ -44,11 +50,14 @@ const appRoutes: Routes = [
     MapComponent,
     FooterComponent,
     MenuItemComponent,
-    MenuPanelComponent
+    MenuPanelComponent,
+    MenuEditItemComponent
     ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

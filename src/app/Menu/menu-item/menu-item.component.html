@@ -1,14 +1,15 @@
 <li>
 <div class="media">
   <div class="media-left">
-    <a [href]="'#'+item.guid" class="open-popup-link">
+    <!-- <a [href]="'#'+item.guid" class="open-popup-link"> -->
+    <a>
       <img class="media-object" [src]="item.imagePath" alt="img">
     </a>
   </div>
   <div class="media-body">
-  <h4 class="media-heading"><a>{{item.name}}</a></h4>
-    <span class="mu-menu-price">${{item.amount}}</span>
-  <p>{{item.description}}</p>
+  <h4 class="media-heading"><a>{{item.nome}}</a></h4>
+    <span class="mu-menu-price">${{item.prezzo}}</span>
+  <p>{{item.descrizione}}</p>
   </div>
 </div>
 <div [id]="item.guid" class="white-popup mfp-hide">
@@ -17,11 +18,6 @@
       <a>
         <img class="media-object" [src]="item.imagePath" alt="img">
       </a>
-    </div>
-    <div class="media-body">
-    <h4 class="media-heading"><a>{{item.name}}</a></h4>
-      <span class="mu-menu-price">${{item.amount}}</span>
-    <p>{{item.description}}</p>
     </div>
   </div>
 </div>

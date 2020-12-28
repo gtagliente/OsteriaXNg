@@ -20,25 +20,28 @@ import { Console } from 'console';
 })
 export class MenuPanelComponent implements OnInit {
     @Input() paneType: string;
-    public selectedPaneType = 'Breakfast';
+    public selectedPaneType ;
 
   dishList: MenuItem[];
+  newDish :MenuItem;
 
   constructor(private dishService: DishService, private route: ActivatedRoute) {
     console.log('Costruttore');
-
+    this.newDish = new MenuItem ('NEWDISH','Add here your dish', '$$', 'Add here your description', 'assets/img/menu/item-2.jpg');
   }
 
   ngOnInit() {
     console.log('init');
    // this.dishList = this.dishService.getDishesByType(this.paneType);
-   // this.selectedPaneType = this.route.snapshot.params['type'];
     this.route.params.subscribe(
         (params:Params) =>{
-          this.selectedPaneType = params['type'];
+          let type : string | undefined;
+          type = params['type'];
+          if (type == undefined) type = 'Breakfast';
+          this.selectedPaneType =type;
+          console.log(type);
           this.dishList = this.dishService.getDishesByType(this.selectedPaneType);
         }
     );
-    this.dishList = this.dishService.getDishesByType(this.selectedPaneType);
   }
 }
