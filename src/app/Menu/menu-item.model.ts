@@ -10,7 +10,7 @@ export class MenuItem implements MenuItemInterface{
   public nome: string;
   public prezzo: string;
   public descrizione: string;
-  public imagePath: string;
+  public imgPath: string;
   public guid: string;
 
   constructor(dishType: string, name: string, amount: string, description: string, imagePath: string) {
@@ -18,7 +18,7 @@ export class MenuItem implements MenuItemInterface{
     this.nome = name;
     this.prezzo = amount;
     this.descrizione = description;
-    this.imagePath = imagePath;
+    this.imgPath = imagePath;
     this.guid = uuidv4();
   }
 
