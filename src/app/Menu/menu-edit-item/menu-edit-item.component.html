@@ -10,30 +10,65 @@
                 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                   <div id="user-data">
                     <div class="form-group">
-                      <label for="username">Username</label>
-                      <input type="text" id="username" class="form-control" ngModel name="username">
-                    </div>
-                    <button class="btn btn-default" type="button">Suggest an Username</button>
-                    <div class="form-group">
-                      <label for="email">Mail</label>
-                      <input type="email" id="email" class="form-control" ngModel name="email">
-                    </div>
-                    <div class="form-group">
-                      <label for="username">Username</label>
-                      <input type="text" id="username" class="form-control" ngModel name="username">
+                      <label for="dishName">Dish Name</label>
+                      <input
+                        type="text"
+                        id="dishName"
+                        class="form-control"
+                        ngModel
+                         name="dishName">
                     </div>
                     <div class="form-group">
-                      <label for="username">Username</label>
-                      <input type="text" id="username" class="form-control" ngModel name="username">
+                      <label for="price">Price</label>
+                      <input type="price"
+                             id="price"
+                             class="form-control"
+                             ngModel
+                             name="price">
+                    </div>
+                    <div class="form-group">
+                      <label for="description">Description</label>
+                      <input type="description"
+                             id="description"
+                             class="form-control"
+                             ngModel
+                             name="description">
+                    </div>
+                    <div class="form-group">
+                      <label for="type">Dish Type</label>
+                      <input type="type"
+                             id="type"
+                             class="form-control"
+                             ngModel
+                             name="type">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="file">Image</label>
+                      <input
+                            #FileSelectInputDialog
+                            type="file"
+                            class="form-control"
+                            ngModel
+                            name="selectedFile">
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="secret">Secret Questions</label>
-                    <select id="secret" class="form-control" ngModel name="secret">
-                      <option value="pet">Your first Pet?</option>
-                      <option value="teacher">Your first teacher?</option>
-                    </select>
+
+                  <div class="row" style="margin-bottom:15px;">
+                    <div class="col-md-3">
+                      <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+                      <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+                    </div>
+                    <div class="col-md-4">
+                      <span class="upload" *ngIf="progress > 0">
+                        {{progress}}%
+                      </span>
+                      <span class="upload" *ngIf="message">
+                        {{message}}
+                      </span>
+                    </div>
                   </div>
+
                   <button class="btn btn-primary" type="submit">Submit</button>
                 </form>
               </div>

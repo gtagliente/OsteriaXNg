@@ -1,7 +1,8 @@
 import {MenuItem} from './Menu/menu-item.model';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { LoggingService } from './logging.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEventType, HttpHeaders, HttpParams, HttpResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 export interface MenuItemInterface {
   id: number;
@@ -14,28 +15,10 @@ export interface MenuItemInterface {
 
 @Injectable()
 export class DishService{
-   /*dishList: MenuItem[] = [
-    new MenuItem ('Breakfast','English Breakfast Test', '15.85', 'Description-Test', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Breakfast','Chinese Breakfast Test', '9.85', 'Description-Test2', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Breakfast','Indian Breakfast Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
 
-    new MenuItem ('Meals','English Meals Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Meals','Chinese Meals Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Meals','Indian Meals Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Meals','Italian Meals Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
+  percentageEmitter = new EventEmitter<number>();
 
-    new MenuItem ('Snacks','English Snacks Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Snacks','Chinese Snacks Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Snacks','Indian Snacks Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-
-    new MenuItem ('Desserts','English Desserts Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Desserts','Chinese Desserts Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Desserts','Indian Desserts Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-
-    new MenuItem ('Drinks','English Drinks Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Drinks','Chinese Drinks Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg'),
-    new MenuItem ('Drinks','Indian Drinks Test', '9.85', 'Description-Test3', 'assets/img/menu/item-2.jpg')
-  ];*/
+  progress : number;
 
   constructor(private loggingService: LoggingService, private http: HttpClient){}
 
@@ -53,21 +36,68 @@ export class DishService{
         console.log('Handling Json');
         let items: MenuItemInterface[] = <MenuItemInterface[]>dishes;
         items.forEach(item => {
-          jsonResponse.push(new MenuItem (item.tipo,item.nome,item.prezzo,item.descrizione,item.imgPath));
+          console.log('Get image for id: '+item.id);
+
+          this.http.get('http://localhost:81/OsteriaXWS/api/File/Download',
+          {
+            observe: 'response',
+            responseType: 'blob',
+            params: new HttpParams().set('id',item.id.toString())
+          }
+          )
+            .subscribe(img =>{
+                console.log('Downloaded image from server');
+                console.log(img);
+                let blob = new Blob([img['body']], {type: 'image/png'});
+                item.imgPath = URL.createObjectURL(blob);
+                jsonResponse.push(new MenuItem (item.tipo,item.nome,item.prezzo,item.descrizione,item.imgPath));
+            });
+         // jsonResponse.push(new MenuItem (item.tipo,item.nome,item.prezzo,item.descrizione,item.imgPath));
         });
 
         return jsonResponse;
       });
-
-    /*this.dishList.forEach(function (item) {
-      //this.loggingService.logMonitor(item.dishType);
-
-      if(item.tipo == type) {
-        //this.loggingService.logMonitor('Found a dish: ' + item.description);
-        result.push(item);
-      }
-    });*/
-
     return jsonResponse;
+  }
+
+  UploadNewDish (form: NgForm, filepath: string){
+    var x =
+    {
+      nome: 	      form.value.dishName,
+      descrizione:  form.value.description,
+      prezzo: 		  form.value.price,
+      tipo: 		    form.value.type,
+      imgPath: 		  filepath
+    }
+    console.log(x);
+    this.http
+        .post(
+          'http://localhost:81/OsteriaXWS/api/Dish',
+          x
+        ).subscribe(responseData=>{
+            console.log(responseData);
+        });
+  }
+
+  UploadFile(files: any):string{
+    if (files.length === 0) {
+      return;
+    }
+
+    let fileToUpload = <File>files[0];
+    const formData = new FormData();
+    formData.append('file', fileToUpload, fileToUpload.name);
+
+    this.http.post('http://localhost:81/OsteriaXWS/api/File/upload', formData, {reportProgress: true, observe: 'events'})
+      .subscribe(event => {
+        if (event.type === HttpEventType.UploadProgress){
+          this.progress = Math.round(100 * event.loaded / event.total);
+          this.percentageEmitter.emit(this.progress);
+        }
+        else if (event.type === HttpEventType.Response){
+         return event.body['fullPath'];
+          //this.onUploadFinished.emit(event.body);
+        }
+      });
   }
 }
